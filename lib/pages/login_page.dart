@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 class LogInPage extends StatelessWidget {
   const LogInPage({super.key});
 
+  final String id = "LogInPage";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,7 +75,7 @@ class LogInPage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, "SignUpPage");
+                      Navigator.pushNamed(context, const SignUpPage().id);
                     },
                     child: const Text(
                       "Sign Up",
