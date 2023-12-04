@@ -1,11 +1,10 @@
 import 'package:achat_app/constants.dart';
-import 'package:achat_app/pages/signup_page.dart';
 import 'package:achat_app/widgets/custom_button_widget.dart';
 import 'package:achat_app/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
-class LogInPage extends StatelessWidget {
-  const LogInPage({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +44,7 @@ class LogInPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Sign In",
+                    "Sign Up",
                     style: TextStyle(
                       fontSize: 25,
                       color: Colors.white,
@@ -60,12 +59,12 @@ class LogInPage extends StatelessWidget {
               const CustomTextField(
                 hintText: "Password",
               ),
-              const CustomButton(text: "Sign In"),
+              const CustomButton(text: "Sign Up"),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    "don`t have an account ",
+                    "already have account ",
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.white,
@@ -73,10 +72,10 @@ class LogInPage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, "SignUpPage");
+                      Navigator.pop(context);
                     },
                     child: const Text(
-                      "Sign Up",
+                      "Sign In",
                       style: TextStyle(
                         fontSize: 16,
                         color: Color.fromARGB(255, 175, 220, 255),
@@ -84,6 +83,9 @@ class LogInPage extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+              const Spacer(
+                flex: 1,
               ),
             ],
           ),
