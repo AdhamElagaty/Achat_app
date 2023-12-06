@@ -86,9 +86,6 @@ class SignUpPage extends StatelessWidget {
                   ),
                 ],
               ),
-              const Spacer(
-                flex: 1,
-              ),
             ],
           ),
         ),
