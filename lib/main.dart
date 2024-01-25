@@ -20,9 +20,8 @@ class AchatApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        // ignore_for_file: prefer_const_constructors
-        const LogInPage().id: (context) => LogInPage(),
-        const SignUpPage().id: (context) => SignUpPage(),
+        LogInPage().id: (context) => LogInPage(),
+        SignUpPage().id: (context) => SignUpPage(),
       },
       initialRoute: "LogInPage",
     );
