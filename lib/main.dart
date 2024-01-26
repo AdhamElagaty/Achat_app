@@ -1,4 +1,5 @@
 import 'package:achat_app/firebase_options.dart';
+import 'package:achat_app/pages/chat_page.dart';
 import 'package:achat_app/pages/login_page.dart';
 import 'package:achat_app/pages/signup_page.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -20,10 +21,11 @@ class AchatApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        LogInPage().id: (context) => LogInPage(),
-        SignUpPage().id: (context) => SignUpPage(),
+        const LogInPage().id: (context) => const LogInPage(),
+        const SignUpPage().id: (context) => const SignUpPage(),
+        const ChatPage().id: (context) => const ChatPage(),
       },
-      initialRoute: "LogInPage",
+      initialRoute: const LogInPage().id,
     );
   }
 }

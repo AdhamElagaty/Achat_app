@@ -17,6 +17,7 @@ class CustomTextFormField extends StatelessWidget {
           if (data!.isEmpty) {
             return "Please Enter $hintText";
           }
+          return null;
         },
         onSaved: onSaveValue,
         onChanged: onSaveValue,

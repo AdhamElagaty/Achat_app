@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'package:achat_app/constants.dart';
 import 'package:achat_app/helper/show_snack_bar.dart';
+import 'package:achat_app/pages/chat_page.dart';
 import 'package:achat_app/pages/signup_page.dart';
 import 'package:achat_app/widgets/custom_button_widget.dart';
 import 'package:achat_app/widgets/custom_text_form_field.dart';
@@ -96,6 +97,7 @@ class _LogInPageState extends State<LogInPage> {
                         try {
                           await signInUser();
                           showSnackBar(context, "Success.");
+                          Navigator.pushNamed(context, ChatPage().id);
                         } on FirebaseAuthException catch (e) {
                           log(e.code + password!);
                           if (e.code == "invalid-credential") {
