@@ -84,6 +84,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       password = data;
                     },
                     hintText: "Password",
+                    obscureText: true,
                   ),
                   CustomButton(
                     onTap: () async {

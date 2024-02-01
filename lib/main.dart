@@ -23,7 +23,7 @@ class AchatApp extends StatelessWidget {
       routes: {
         const LogInPage().id: (context) => const LogInPage(),
         const SignUpPage().id: (context) => const SignUpPage(),
-        const ChatPage().id: (context) => const ChatPage(),
+        ChatPage().id: (context) => ChatPage(),
       },
       initialRoute: const LogInPage().id,
     );

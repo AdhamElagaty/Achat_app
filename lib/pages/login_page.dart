@@ -22,7 +22,7 @@ class _LogInPageState extends State<LogInPage> {
   GlobalKey<FormState> formKey = GlobalKey();
 
   bool isLoading = false;
-
+  UserCredential? user;
   String? email, password;
 
   @override
@@ -87,6 +87,7 @@ class _LogInPageState extends State<LogInPage> {
                       password = data;
                     },
                     hintText: "Password",
+                    obscureText: true,
                   ),
                   CustomButton(
                     onTap: () async {
@@ -97,7 +98,8 @@ class _LogInPageState extends State<LogInPage> {
                         try {
                           await signInUser();
                           showSnackBar(context, "Success.");
-                          Navigator.pushNamed(context, ChatPage().id);
+                          Navigator.pushNamed(context, ChatPage().id,
+                              arguments: user);
                         } on FirebaseAuthException catch (e) {
                           log(e.code + password!);
                           if (e.code == "invalid-credential") {
@@ -133,7 +135,7 @@ class _LogInPageState extends State<LogInPage> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, SignUpPage().id);
+                          Navigator.pushNamed(context, const SignUpPage().id);
                         },
                         child: const Text(
                           "Sign Up",
@@ -156,7 +158,7 @@ class _LogInPageState extends State<LogInPage> {
 
   Future<void> signInUser() async {
     log(email! + password!);
-    UserCredential user = await FirebaseAuth.instance
+    user = await FirebaseAuth.instance
         .signInWithEmailAndPassword(email: email!, password: password!);
     log("hi");
   }

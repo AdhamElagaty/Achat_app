@@ -3,16 +3,21 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class CustomTextFormField extends StatelessWidget {
   CustomTextFormField(
-      {super.key, required this.hintText, required this.onSaveValue});
+      {super.key,
+      required this.hintText,
+      required this.onSaveValue,
+      this.obscureText = false});
 
   final String hintText;
   Function(String?)? onSaveValue;
+  final bool obscureText;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: TextFormField(
+        obscureText: obscureText,
         validator: (data) {
           if (data!.isEmpty) {
             return "Please Enter $hintText";
