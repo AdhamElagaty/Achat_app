@@ -1,6 +1,6 @@
 import 'dart:developer';
 import 'package:achat_app/constants.dart';
-import 'package:achat_app/helper/show_snack_bar.dart';
+import 'package:achat_app/helpers/show_snack_bar.dart';
 import 'package:achat_app/widgets/custom_button_widget.dart';
 import 'package:achat_app/widgets/custom_text_form_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
